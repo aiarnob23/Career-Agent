@@ -15,7 +15,8 @@ const app = (0, express_1.default)();
 app.use((0, cookie_parser_1.default)());
 app.use(express_1.default.json());
 app.use((0, cors_1.default)({
-    origin: "https://career-agent-murex.vercel.app",
+    origin: "https://career-agent-frontend.vercel.app",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
 }));
 // routes
