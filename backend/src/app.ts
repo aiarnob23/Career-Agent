@@ -16,6 +16,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: "https://career-agent-frontend.vercel.app",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
   })
 );
