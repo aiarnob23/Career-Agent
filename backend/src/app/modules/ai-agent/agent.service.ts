@@ -7,21 +7,17 @@ const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 const model = "gemini-2.5-flash";
 const instructions: string = "Suppose you are an AI agent. Your task is to guide a user in their career path. If a user asks for negative or adult information, or becomes frustrated with your response, please avoid the topic by apologizing politely and telling them your limitations. After collecting data online or generating text, please provide a response in a formal format and fine-tune it when you generate the answer, text, or results. The next part is the text from the user; observe it first and then give an appropriate reply or answer.";
 
-// Updated to handle frontend requests with history
 const textGenerate = async (content: string, history: any[] = []) => {
   try {
     console.log("Processing content:", content);
     console.log("Processing history:", history);
     
-    // Build context from history - handle both formats
     let contextHistory = "";
     if (history && history.length > 0) {
-      // Keep last 5 conversations for context
       const recentHistory = history.slice(-5);
       
       contextHistory = recentHistory
         .map(entry => {
-          // Handle the ChatHistory format from frontend
           if (entry.user) {
             if (entry.ai) {
               return `User: ${entry.user}\nAssistant: ${entry.ai}`;
@@ -35,7 +31,6 @@ const textGenerate = async (content: string, history: any[] = []) => {
         .join("\n\n");
     }
 
-    // Build the full prompt with context
     let fullContent = instructions;
     
     if (contextHistory) {
