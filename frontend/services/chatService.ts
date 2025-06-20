@@ -13,7 +13,7 @@ interface ChatHistory {
 
 class ChatService {
     private readonly STORAGE_KEY = 'chat_history';
-    private readonly API_URL = 'career-agent-backend.vercel.app/api/ai-agent/chat';
+    private readonly API_URL = 'https://career-agent-backend.vercel.app/api/ai-agent/chat';
     private readonly MAX_HISTORY = 5;
 
     // Save messages to localStorage
