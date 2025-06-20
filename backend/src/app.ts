@@ -15,7 +15,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://career-agent-murex.vercel.app",
+    origin: "https://career-agent-frontend.vercel.app",
     credentials: true,
   })
 );
