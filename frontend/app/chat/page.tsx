@@ -50,7 +50,7 @@ export default function ChatPage() {
     }
   }, []);
 
-
+  // Auto-scroll to bottom
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isTyping]);
@@ -154,7 +154,7 @@ export default function ChatPage() {
           <div key={index} className="space-y-2 mb-4">
             {items.map((item, itemIndex) => (
               <div key={itemIndex} className="flex items-start space-x-2">
-                <span className="text-purple-500 text-sm mt-1">•</span>
+                <span className="text-blue-500 text-sm mt-1">•</span>
                 <span className="flex-1">{item.replace(/^[•\-\d\.]\s*/, '')}</span>
               </div>
             ))}
@@ -196,7 +196,7 @@ export default function ChatPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-purple-900/20">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-blue-900/20">
       <Header />
 
       <div className="pt-20">
@@ -210,7 +210,7 @@ export default function ChatPage() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-between text-xl">
                     <div className="flex items-center">
-                      <Lightbulb className="w-5 h-5 mr-2 text-purple-600" />
+                      <Lightbulb className="w-5 h-5 mr-2 text-blue-600" />
                       Quick Actions
                     </div>
                     <Button
@@ -257,7 +257,7 @@ export default function ChatPage() {
               <Card className="h-full flex flex-col shadow-xl border-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl">
                 <CardHeader className="border-b border-gray-100 dark:border-gray-700">
                   <CardTitle className="flex items-center text-xl">
-                    <MessageCircle className="w-5 h-5 mr-2 text-purple-600" />
+                    <MessageCircle className="w-5 h-5 mr-2 text-blue-600" />
                     Career Assistant Chat
                   </CardTitle>
                   <CardDescription>
@@ -279,14 +279,14 @@ export default function ChatPage() {
                       <div className={`flex items-start space-x-3 w-full ${message.type === 'user' ? 'flex-row-reverse space-x-reverse max-w-2xl ml-auto' : 'max-w-4xl'}`}>
                       <div ref={messagesEndRef} />
                         <Avatar className="w-8 h-8 flex-shrink-0 mt-1">
-                          <AvatarFallback className={message.type === 'user' ? 'bg-gradient-to-br from-purple-600 to-cyan-600 text-white' : 'bg-gradient-to-br from-gray-600 to-gray-700 text-white'}>
+                          <AvatarFallback className={message.type === 'user' ? 'bg-gradient-to-br from-blue-600 to-cyan-600 text-white' : 'bg-gradient-to-br from-gray-600 to-gray-700 text-white'}>
                             {message.type === 'user' ? <User className="w-4 h-4" /> : <Bot className="w-4 h-4" />}
                           </AvatarFallback>
                         </Avatar>
                         
                         <div className="min-w-0 flex-1">
                           <div className={`group relative rounded-2xl p-4 shadow-sm ${message.type === 'user'
-                              ? 'bg-gradient-to-br from-purple-600 to-cyan-600 text-white ml-8'
+                              ? 'bg-gradient-to-br from-blue-600 to-cyan-600 text-white ml-8'
                               : 'bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 mr-8'
                             }`}>
                            
@@ -315,7 +315,7 @@ export default function ChatPage() {
                               )}
                             </div>
                             
-                            <div className={`text-xs mt-3 ${message.type === 'user' ? 'text-purple-100' : 'text-gray-500 dark:text-gray-400'}`}>
+                            <div className={`text-xs mt-3 ${message.type === 'user' ? 'text-blue-100' : 'text-gray-500 dark:text-gray-400'}`}>
                               {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                             </div>
                           </div>
@@ -331,7 +331,7 @@ export default function ChatPage() {
                                     variant="outline"
                                     size="sm"
                                     onClick={() => handleSuggestionClick(suggestion)}
-                                    className="text-xs rounded-full border-2 hover:bg-purple-50 dark:hover:bg-purple-900/20 hover:border-purple-300 transition-all duration-300 h-7"
+                                    className="text-xs rounded-full border-2 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:border-blue-300 transition-all duration-300 h-7"
                                   >
                                     {suggestion}
                                   </Button>
@@ -375,13 +375,13 @@ export default function ChatPage() {
                       value={currentMessage}
                       onChange={(e) => setCurrentMessage(e.target.value)}
                       onKeyPress={(e) => e.key === 'Enter' && !e.shiftKey && handleSendMessage()}
-                      className="flex-1 h-12 rounded-xl border-2 focus:border-purple-500 transition-colors"
+                      className="flex-1 h-12 rounded-xl border-2 focus:border-blue-500 transition-colors"
                       disabled={isTyping}
                     />
                     <Button
                       onClick={handleSendMessage}
                       disabled={!currentMessage.trim() || isTyping}
-                      className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <Send className="w-5 h-5" />
                     </Button>

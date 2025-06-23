@@ -19,19 +19,19 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-purple-900/20">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-blue-900/20">
       <Header />
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-float"></div>
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
         </div>
         
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center">
-            <Badge variant="secondary" className="mb-6 bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 border-purple-200 dark:border-purple-800">
+            <Badge variant="secondary" className="mb-6 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 border-blue-200 dark:border-blue-800">
               <Sparkles className="w-4 h-4 mr-2" />
               AI-Powered Career Platform
             </Badge>
@@ -43,7 +43,7 @@ export default function Home() {
             Meet our advanced AI agent, designed to provide you with personalized career guidance and create stunning resumes in no time. Powered by cutting-edge technology, it transforms your professional journey in minutes, not hours
             </p>
             <Link href="/chat" className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
-              <Button size="lg" className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white px-10 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-10 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group">
                 Chat with Agent
                 <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -52,15 +52,15 @@ export default function Home() {
             {/* Hero Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
               <div className="text-center group">
-                <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text text-transparent mb-2">50K+</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-2">50K+</div>
                 <div className="text-gray-600 dark:text-gray-400 font-medium">Resumes Created</div>
               </div>
               <div className="text-center group">
-                <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text text-transparent mb-2">98%</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-2">98%</div>
                 <div className="text-gray-600 dark:text-gray-400 font-medium">Success Rate</div>
               </div>
               <div className="text-center group">
-                <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text text-transparent mb-2">24/7</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-2">24/7</div>
                 <div className="text-gray-600 dark:text-gray-400 font-medium">AI Support</div>
               </div>
             </div>
@@ -82,10 +82,10 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Resume Builder */}
-            <Card className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg bg-gradient-to-br from-white to-purple-50/50 dark:from-gray-800 dark:to-purple-900/20 overflow-hidden relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <Card className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg bg-gradient-to-br from-white to-blue-50/50 dark:from-gray-800 dark:to-blue-900/20 overflow-hidden relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardHeader className="text-center pb-6 relative">
-                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <FileText className="w-10 h-10 text-white" />
                 </div>
                 <CardTitle className="text-3xl mb-4 font-bold">Smart Resume Builder</CardTitle>
@@ -113,7 +113,7 @@ export default function Home() {
                   </li>
                 </ul>
                 <Link href="/resume-builder">
-                  <Button className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold py-3 rounded-xl group-hover:shadow-lg transition-all duration-300">
+                  <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 rounded-xl group-hover:shadow-lg transition-all duration-300">
                     Start Building
                     <ChevronRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -123,7 +123,7 @@ export default function Home() {
 
             {/* AI Assistant */}
             <Card className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg bg-gradient-to-br from-white to-cyan-50/50 dark:from-gray-800 dark:to-cyan-900/20 overflow-hidden relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardHeader className="text-center pb-6 relative">
                 <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <MessageCircle className="w-10 h-10 text-white" />
@@ -165,16 +165,16 @@ export default function Home() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-600 via-purple-700 to-cyan-600 relative overflow-hidden">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-600 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-cyan-600/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20"></div>
         
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Why Choose Career Agent?
             </h2>
-            <p className="text-xl text-purple-100 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
               Join thousands of professionals who have accelerated their careers with our cutting-edge platform.
             </p>
           </div>
@@ -185,7 +185,7 @@ export default function Home() {
                 <Zap className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-semibold text-white mb-4">Lightning Fast</h3>
-              <p className="text-purple-100 leading-relaxed">
+              <p className="text-blue-100 leading-relaxed">
                 Create professional resumes in minutes with our AI-powered automation. No more hours of formatting and tweaking.
               </p>
             </div>
@@ -195,7 +195,7 @@ export default function Home() {
                 <Brain className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-semibold text-white mb-4">AI-Powered Intelligence</h3>
-              <p className="text-purple-100 leading-relaxed">
+              <p className="text-blue-100 leading-relaxed">
                 Our advanced AI analyzes industry trends and requirements to optimize your resume for maximum impact.
               </p>
             </div>
@@ -205,7 +205,7 @@ export default function Home() {
                 <Shield className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-semibold text-white mb-4">Trusted & Secure</h3>
-              <p className="text-purple-100 leading-relaxed">
+              <p className="text-blue-100 leading-relaxed">
                 Your data is protected with enterprise-grade security. Privacy and confidentiality guaranteed at all times.
               </p>
             </div>
@@ -258,7 +258,7 @@ export default function Home() {
                   </div>
                   <p className="text-gray-600 dark:text-gray-300 mb-8 italic text-lg leading-relaxed">"{testimonial.text}"</p>
                   <div className="flex items-center">
-                    <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-cyan-600 rounded-full flex items-center justify-center text-white font-semibold text-lg">
+                    <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-full flex items-center justify-center text-white font-semibold text-lg">
                       {testimonial.name.split(' ').map(n => n[0]).join('')}
                     </div>
                     <div className="ml-4">
@@ -284,7 +284,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link href="/resume-builder">
-              <Button size="lg" className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white px-10 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-10 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
                 Start Free Trial
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
