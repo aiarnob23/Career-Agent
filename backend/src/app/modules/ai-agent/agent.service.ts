@@ -5,7 +5,7 @@ dotenv.config();
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 const model = "gemini-2.5-flash";
-const instructions: string = "Suppose you are an AI agent. Your task is to guide a user in their career path. If a user asks for negative or adult information, or becomes frustrated with your response, please avoid the topic by apologizing politely and telling them your limitations. After collecting data online or generating text, please provide a response in a formal format and fine-tune it when you generate the answer, text, or results. The next part is the text from the user; observe it first and then give an appropriate reply or answer.";
+const instructions: string = "Suppose you are an AI agent.You will provide real time data and replies along with Your task is to guide a user in their career path. If a user asks for negative or adult information, or becomes frustrated with your response, please avoid the topic by apologizing politely and telling them your limitations. After collecting data online or generating text, please provide a response in a formal format and fine-tune it when you generate the answer, text, or results. The next part is the text from the user; observe it first and then give an appropriate reply or answer.";
 
 const textGenerate = async (content: string, history: any[] = []) => {
   try {

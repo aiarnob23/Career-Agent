@@ -14,22 +14,18 @@ interface ChatHistory {
 class ChatService {
     private readonly STORAGE_KEY = 'chat_history';
     private readonly API_URL = 'https://career-agent-backend.vercel.app/api/ai-agent/chat';
-    private readonly MAX_HISTORY = 5;
+    private readonly MAX_HISTORY = 3;
 
     // Save messages to localStorage
     saveMessagesToStorage(messages: Message[]): void {
         try {
             console.log("Saving messages to storage:", messages);
             
-            // Convert messages to chat history format
             const chatHistory: ChatHistory[] = [];
-            
-            // Process messages in pairs (user-ai)
             for (let i = 0; i < messages.length; i++) {
                 const message = messages[i];
                 
                 if (message.type === 'user') {
-                    // Look for the next AI message
                     const nextMessage = messages[i + 1];
                     
                     chatHistory.push({
@@ -37,14 +33,12 @@ class ChatService {
                         ai: nextMessage && nextMessage.type === 'ai' ? nextMessage.content : undefined
                     });
                     
-                    // Skip the AI message in the next iteration if it exists
                     if (nextMessage && nextMessage.type === 'ai') {
-                        i++; // Skip the AI message as we've already processed it
+                        i++; 
                     }
                 }
             }
             
-            // Keep only the most recent conversations
             const recentHistory = chatHistory.slice(-this.MAX_HISTORY);
             
             console.log("Chat history to save:", recentHistory);
@@ -96,7 +90,7 @@ class ChatService {
         }
     }
 
-    // Get chat history in backend format
+    // chat history
     getChatHistoryForBackend(): ChatHistory[] {
         try {
             const stored = localStorage.getItem(this.STORAGE_KEY);
@@ -109,16 +103,14 @@ class ChatService {
         }
     }
 
-    // Send message to AI backend
+    // Send message to backend (I will finish it later)
     async sendMessageToAI(userMessage: string, currentMessages: Message[]): Promise<string> {
         try {
             console.log("Sending message to AI:", userMessage);
             console.log("Current messages:", currentMessages);
-            
-            // Create a temporary array with the new user message for context
+        
             const messagesWithNewMessage = [...currentMessages];
-            
-            // Get chat history for context (don't include the current message yet)
+
             const chatHistory = this.getChatHistoryForBackend();
             
             console.log("Sending to backend - Message:", userMessage);
@@ -144,7 +136,6 @@ class ChatService {
             
             const aiResponse = data.data || 'Sorry, I could not process your request.';
             
-            // Now save the messages including the new conversation
             const newUserMessage: Message = {
                 id: Date.now().toString(),
                 type: 'user',
